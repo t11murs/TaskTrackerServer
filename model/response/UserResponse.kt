@@ -1,10 +1,9 @@
-package backend.workshop.model.response
+package model.response
 
-import java.time.LocalDateTime
-
-class UserResponse(
-    override val id: Long,
-    override val createdAt: LocalDateTime,
+data class UserResponse(
+    val id: Long,
+    val createdAt: String,
     val name: String,
     val email: String,
-): EntityResponse
+    val tasks: List<TaskResponse>? = emptyList()
+)

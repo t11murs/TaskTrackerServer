@@ -1,19 +1,16 @@
-package backend.workshop.model.request
+package model.request
 
-import jakarta.validation.constraints.NotBlank
-import jakarta.validation.constraints.NotNull
-import org.hibernate.validator.constraints.Length
+import androidx.annotation.NonNull
+import androidx.annotation.Size
+import androidx.annotation.IntRange
 import java.time.LocalDate
 import java.time.LocalTime
 
 data class TaskRequest(
-    @field:NotBlank
+    @field:NonNull
     var name: String,
 
-    @field:NotNull
-    var userId: Long,
-
-    @field:Length(max = 125)
+    @field:Size(max = 125)
     var description: String? = null,
 
     var deadlineDate: LocalDate? = null,
@@ -21,5 +18,6 @@ data class TaskRequest(
 
     var remind: Boolean = false,
 
+    @field:IntRange(from = 0)
     var remindTime: Int? = null
 )

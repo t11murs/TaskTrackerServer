@@ -1,13 +1,10 @@
-package backend.workshop.model.response
+package model.response
 
-import jakarta.persistence.Column
 import java.time.LocalDate
-import java.time.LocalDateTime
 import java.time.LocalTime
 
 class TaskResponse(
-    override val id: Long,
-    override val createdAt: LocalDateTime,
+    val id: Long,
     val name: String,
     val description: String?,
     val userId: Long,
@@ -17,5 +14,4 @@ class TaskResponse(
     var totalDurationMinutes: Int = 0,
     var remind: Boolean,
     var remindTime: Int?
-): EntityResponse
-
+)

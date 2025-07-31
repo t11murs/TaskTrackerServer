@@ -1,10 +1,6 @@
-package backend.workshop.model.request
-
-import jakarta.validation.constraints.NotBlank
+package model.request
 
 data class LoginRequest(
-    @field:NotBlank
     val email: String,
-    @field:NotBlank
     val password: String
 )
